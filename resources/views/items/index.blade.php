@@ -3,7 +3,7 @@
 @section('content')
 <div class="ml-3" style="margin-left: 15px; margin-right: 15px">
   <center><h3 style="padding-top: 10px; padding-bottom: 10px">Daftar Pertanyaan</h3></center>
-    <button type="button" class="btn btn-primary" style="margin-bottom: 15px"><a href="/pertanyaan/create" style="color: white">Tambah Pertanyaan</a></button>
+    <button type="button" class="btn btn-info" style="margin-bottom: 15px"><a href="/pertanyaan/create" style="color: white">Tambah Pertanyaan</a></button>
     <br>
     <table class="table table-striped">
         <thead>
@@ -11,8 +11,9 @@
             <th>No</th>
             <th>Judul</th>
             <th>Isi</th>
-            <th>Tanggal Dibuat</th>
-            <th>Tanggal Diperbaharui</th>
+            <th>Dibuat</th>
+            <th>Diperbaharui</th>
+            <center><th>Actions</th></center>
             <th>Jawaban</th>
           </tr>
         </thead>
@@ -24,7 +25,15 @@
           	<td>{{$tanya->isi}}</td>
             <td>{{$tanya->created_at}}</td>
             <td>{{$tanya->updated_at}}</td>
-            <td><button type="button" class="btn btn-primary"><a href="/jawaban/{{$tanya->id}}" style="color: white">Jawaban</a></button></td>
+            <td width="170px"><button type="button" class="btn btn-info"><a href="/pertanyaan/{{$tanya->id}}" style="color: white"><i class="far fa-list-alt"></i></a></button>
+                <button type="button" class="btn btn-warning"><a href="/pertanyaan/{{$tanya->id}}/edit" style="color: white"><i class="fas fa-pencil-alt"></i></a></button>
+                <form action="/pertanyaan/{{$tanya->id}}" method="post" style="display: inline;">
+                  @csrf
+                  @method('DELETE')
+                  <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                </form>
+            </td>
+            <td><button type="button" class="btn btn-info"><a href="/jawaban/{{$tanya->id}}" style="color: white">Jawaban</a></button></td>
           </tr>
           @endforeach
         </tbody>

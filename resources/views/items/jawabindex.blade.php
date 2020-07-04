@@ -3,7 +3,7 @@
 @section('content')
 <div class="ml-3" style="margin-left: 15px; margin-right: 15px">
   <center><h4 style="padding-top: 10px; padding-bottom: 10px">Daftar Jawaban</h4></center>
-  <button type="button" class="btn btn-primary" style="margin-bottom: 15px"><a href="/pertanyaan" style="color: white">Kembali</a></button>
+  <button type="button" class="btn btn-info" style="margin-bottom: 15px"><a href="/pertanyaan" style="color: white">Kembali</a></button>
   <table class="table table-striped">
     <thead>
       <tr>
@@ -31,7 +31,7 @@
       <label for="isi">Jawaban Anda</label>
       <input type="text" class="form-control" name="isi" placeholder="Masukkan Jawaban Anda" id="isi">
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-info">Submit</button>
   </form>
   </div>
 @endsection

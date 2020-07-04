@@ -15,7 +15,6 @@ class JawabModel {
 			->get();
 		return view('items.jawabindex',['jawab'=>$jawab->all(),'tanya'=>$tanya->all()]);
 	}
-	
 	public static function store($request){
 		DB::table('jawab')->insert($request);
 		return JawabModel::get_all($request['pertanyaan_id']);

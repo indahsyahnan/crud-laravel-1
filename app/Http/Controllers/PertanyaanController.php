@@ -22,7 +22,23 @@ class PertanyaanController extends Controller
 	   		return redirect('/pertanyaan');
 	   	}
     }
-
+    public function show($id){
+        $tanya = TanyaModel::find_by_id($id);
+        $jawab = TanyaModel::find_by_id_pertanyaan($id);
+        return view('items.show', compact('tanya','jawab'));
+    }
+    public function edit($id){
+        $tanya = TanyaModel::find_by_id($id);
+        return view('items.edit', compact('tanya'));
+    }
+    public function update($id, Request $request){
+        $tanya = TanyaModel::update($id, $request->all());
+        return redirect('/pertanyaan');
+    }
+    public function destroy($id){
+        $deleted = TanyaModel::destroy($id);
+        return redirect('/pertanyaan'); 
+    }
 }
 
 

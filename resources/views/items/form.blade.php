@@ -6,7 +6,7 @@
     @csrf
     <div class="form-group" style="padding-top : 20px">
       <center><h4>Tulis Pertanyaan Anda Disini</h4></center>
-      <button type="button" class="btn btn-primary" style="margin-bottom: 15px"><a href="/pertanyaan" style="color: white">Kembali</a></button>
+      <button type="button" class="btn btn-info" style="margin-bottom: 15px"><a href="/pertanyaan" style="color: white">Kembali</a></button>
       <br>
       <label for="judul">Judul</label>
       <input type="text" class="form-control" name="judul" placeholder="Masukkan Judul" id="judul">
@@ -15,7 +15,7 @@
       <label for="isi">Isi</label>
       <input type="text" class="form-control" name="isi" placeholder="Masukkan Isi" id="isi">
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-info">Submit</button>
   </form>
 </div>
 @endsection
