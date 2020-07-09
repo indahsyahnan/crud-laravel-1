@@ -19,7 +19,7 @@ class CreateJawabTable extends Migration
             $table->timestamp('created_at')->default(\DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(\DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
             $table->unsignedBigInteger('pertanyaan_id');
-            $table->foreign('pertanyaan_id')->references('id')->on('tanya');
+            $table->foreign('pertanyaan_id')->references('id')->on('tanya')->onDelete('cascade');
         });
     }
 
